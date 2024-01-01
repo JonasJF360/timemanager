@@ -1,0 +1,49 @@
+@mixin base-content {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    border-bottom: 1px solid $cor-cinza;
+    gap: 0;
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    >div:first-child {
+        background-color: yellow;
+        width: 25px;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    .period {
+        @include base-content();
+        background-color: yellow;
+        height: 25px
+    }
+
+    .days {
+        @include base-content();
+        height: 100px;
+
+        >div:first-child {
+            position: relative;
+            display: block;
+
+            p {
+                position: absolute;
+                padding-top: 2px;
+                text-align: center;
+                width: 99px;
+                bottom: -20%;
+                transform-origin: -1% 0;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

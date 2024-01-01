@@ -13,10 +13,12 @@ html {
 body {
   font-size: 1.6rem;
   min-height: 100vh;
+  background-color: #fff;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
@@ -41,6 +43,97 @@ h4, h5, h6 {
 
 img {
   max-width: 100%;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  height: 90px;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+section .period {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  border-bottom: 1px solid #ccc;
+  gap: 0;
+  background-color: yellow;
+  height: 25px;
+}
+section .period > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section .period > div:first-child {
+  background-color: yellow;
+  width: 25px;
+}
+section .days {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  border-bottom: 1px solid #ccc;
+  gap: 0;
+  height: 100px;
+}
+section .days > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section .days > div:first-child {
+  background-color: yellow;
+  width: 25px;
+}
+section .days > div:first-child {
+  position: relative;
+  display: block;
+}
+section .days > div:first-child p {
+  position: absolute;
+  padding-top: 2px;
+  text-align: center;
+  width: 99px;
+  bottom: -20%;
+  transform-origin: -1% 0;
+  transform: rotate(-90deg);
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+}
+footer a:hover {
+  color: #ffff9f;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */
