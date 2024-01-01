@@ -1,7 +1,6 @@
 @mixin base-content {
     display: grid;
     grid-template-columns: auto 1fr 1fr 1fr;
-    border-bottom: 1px solid $cor-cinza;
     gap: 0;
 
     &>div {
@@ -9,21 +8,36 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border-right: 1px solid $cor-cinza;
     }
 
     >div:first-child {
-        background-color: yellow;
         width: 25px;
     }
+}
+
+@mixin cor-titulos {
+    color: $cor-branca;
+    background-color: $cor-cinza-escuro;
 }
 
 section {
     display: flex;
     flex-direction: column;
+    min-height: 76.4vh;
+
+    #total {
+        @include cor-titulos();
+        border-bottom: 1px solid $cor-cinza-claro;
+        padding: .5rem;
+        text-align: center;
+        text-transform: uppercase
+    }
 
     .period {
         @include base-content();
-        background-color: yellow;
+        @include cor-titulos();
+        border-bottom: 1px solid $cor-cinza;
         height: 25px
     }
 
@@ -32,18 +46,59 @@ section {
         height: 100px;
 
         >div:first-child {
+            @include cor-titulos();
             position: relative;
             display: block;
+
 
             p {
                 position: absolute;
                 padding-top: 2px;
                 text-align: center;
-                width: 99px;
+                width: 100px;
                 bottom: -20%;
-                transform-origin: -1% 0;
+                transform-origin: 0% 10%;
                 transform: rotate(-90deg);
             }
         }
+
+        >div:nth-child(3) {
+            background-color: $cor-cinza-claro;
+        }
+
+        >div:nth-child(n+2):hover {
+            background-color: $cor-amarela-claro;
+            cursor: pointer;
+        }
     }
+
+    .total-day {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+        color: $cor-cinza-escuro;
+        background-color: $cor-cinza-claro;
+        border-bottom: 1px solid $cor-cinza-escuro;
+        border-right: 1px solid $cor-cinza;
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-align: center;
+        
+        &::before {
+            background-color: $cor-cinza-escuro;
+            content: '';
+            width: 24px;
+            height: 21px;
+            border-bottom: 1px solid $cor-cinza;
+            border-right: 1px solid $cor-cinza;
+        }
+        
+        p {
+            padding: 2px;
+            width: 95%;
+            border-top: 1px solid $cor-cinza;
+        }
+    }
+
 }

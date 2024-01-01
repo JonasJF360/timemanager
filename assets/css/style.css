@@ -69,13 +69,23 @@ header {
 section {
   display: flex;
   flex-direction: column;
+  min-height: 76.4vh;
+}
+section #total {
+  color: #fff;
+  background-color: #333;
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 section .period {
   display: grid;
   grid-template-columns: auto 1fr 1fr 1fr;
-  border-bottom: 1px solid #ccc;
   gap: 0;
-  background-color: yellow;
+  color: #fff;
+  background-color: #333;
+  border-bottom: 1px solid #ccc;
   height: 25px;
 }
 section .period > div {
@@ -83,15 +93,14 @@ section .period > div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-right: 1px solid #ccc;
 }
 section .period > div:first-child {
-  background-color: yellow;
   width: 25px;
 }
 section .days {
   display: grid;
   grid-template-columns: auto 1fr 1fr 1fr;
-  border-bottom: 1px solid #ccc;
   gap: 0;
   height: 100px;
 }
@@ -100,12 +109,14 @@ section .days > div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-right: 1px solid #ccc;
 }
 section .days > div:first-child {
-  background-color: yellow;
   width: 25px;
 }
 section .days > div:first-child {
+  color: #fff;
+  background-color: #333;
   position: relative;
   display: block;
 }
@@ -113,10 +124,43 @@ section .days > div:first-child p {
   position: absolute;
   padding-top: 2px;
   text-align: center;
-  width: 99px;
+  width: 100px;
   bottom: -20%;
-  transform-origin: -1% 0;
+  transform-origin: 0% 10%;
   transform: rotate(-90deg);
+}
+section .days > div:nth-child(3) {
+  background-color: #eee;
+}
+section .days > div:nth-child(n+2):hover {
+  background-color: #ffff9f;
+  cursor: pointer;
+}
+section .total-day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #333;
+  background-color: #eee;
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #ccc;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+section .total-day::before {
+  background-color: #333;
+  content: "";
+  width: 24px;
+  height: 21px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+section .total-day p {
+  padding: 2px;
+  width: 95%;
+  border-top: 1px solid #ccc;
 }
 
 footer {
@@ -130,6 +174,9 @@ footer {
   color: #fff;
   padding: 0.5rem;
   text-align: center;
+}
+footer h2 {
+  font-size: 2rem;
 }
 footer a:hover {
   color: #ffff9f;
