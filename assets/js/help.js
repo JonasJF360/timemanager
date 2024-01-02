@@ -1,17 +1,9 @@
 import { utils } from './utils.js';
 export function helpMenu() {
     const ajuda = document.querySelector('#menu-ajuda > img')
-    utils.limparTela();
     
-    if (ajuda.src.split('/').pop() === 'help.svg') {
-        ajuda.src = './assets/img/close.svg'
-        ajuda.title = 'Fechar';
-        showHelp();
-    } else {
-        ajuda.src = './assets/img/help.svg';
-        ajuda.title = 'Ajuda';
-        utils.calcularHoras();
-    }
+    utils.cameBack();
+    showHelp();;
 
 }
 

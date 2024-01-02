@@ -1,7 +1,7 @@
 import { utils } from './utils.js';
 import { helpMenu } from './help.js';
 
-(function App() {
+(function () {
     // Adiciona ano atual no copyright
     document.getElementById('copy-year').innerHTML = new Date().getFullYear();
 
