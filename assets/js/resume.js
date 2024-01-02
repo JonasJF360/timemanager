@@ -7,13 +7,13 @@ export function showResume() {
 }
 
 function createTotalHours() {
-    const divTotal = createElement('div')
+    const divTotal = document.createElement('div')
     divTotal.id = 'total'
 
-    const h2 = createElement('h2')
+    const h2 = document.createElement('h2')
     h2.innerHTML = 'Total de horas: '
     
-    const span = createElement('span')
+    const span = document.createElement('span')
     span.id = 'total-hours'
     span.innerHTML = '00:00'
 
@@ -24,12 +24,12 @@ function createTotalHours() {
 }
 
 function createPeriod() {
-    const divBase = createElement('div')
+    const divBase = document.createElement('div')
     divBase.classList.add('period')
 
     const periodos = [null, 'Manha', 'Tarde', 'Noite']
     periodos.map((period) => {
-        const div = createElement('div')
+        const div = document.createElement('div')
         div.innerHTML = period
         divBase.appendChild(div)
     })
@@ -45,15 +45,15 @@ function createDays(timeManager) {
 
         let cont = 1
 
-        const div = createElement('div')
+        const div = document.createElement('div')
         div.classList.add('day')
-        const p = createElement('p')
+        const p = document.createElement('p')
         p.innerHTML = day
         div.appendChild(p)
         days.appendChild(div)
 
         while (cont < 4) {
-            const divHour = createElement('div')
+            const divHour = document.createElement('div')
             divHour.innerHTML = '00:00'
             divHour.id = 'day-' + (index + 1) + '-' + cont
             days.appendChild(divHour)
@@ -62,13 +62,13 @@ function createDays(timeManager) {
 
         timeManager.appendChild(days)
 
-        const totalDay = createElement('div')
+        const totalDay = document.createElement('div')
         totalDay.classList.add('total-day')
 
-        const pTotal = createElement('p')
+        const pTotal = document.createElement('p')
         pTotal.innerHTML = 'Total de ' + day + ': '
 
-        const spanTotal = createElement('span')
+        const spanTotal = document.createElement('span')
         spanTotal.innerHTML = '00:00'
         spanTotal.id = 'total-day-' + (index + 1)
 
@@ -77,8 +77,4 @@ function createDays(timeManager) {
 
         timeManager.appendChild(totalDay)
     })
-}
-
-function createElement(e) {
-    return document.createElement(e)
 }

@@ -1,0 +1,17 @@
+#help {
+    
+    &-title {
+        @include cor-titulos();
+        text-align: center;
+        text-transform: uppercase;
+        padding: .5rem;
+    }
+
+    h3 {
+        @include h3-info();
+    };
+    p {
+        @include p-info();
+        margin-bottom: .5rem;
+    }
+}

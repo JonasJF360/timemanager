@@ -1,0 +1,14 @@
+@mixin cor-titulos {
+    color: $cor-branca;
+    background-color: $cor-cinza-escuro;
+}
+
+@mixin h3-info {
+    text-transform: uppercase;
+    padding: .5rem;
+}
+
+@mixin p-info {
+    padding: 0 .5rem;
+    text-align: justify;
+}

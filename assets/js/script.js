@@ -1,25 +1,19 @@
-import { showResume } from './resume.js';
-import { showDataDay } from './dataDay.js';
+import { utils } from './utils.js';
+import { helpMenu } from './help.js';
 
 (function App() {
     // Adiciona ano atual no copyright
     document.getElementById('copy-year').innerHTML = new Date().getFullYear();
 
+    document.querySelector('#menu-ajuda').addEventListener('click', helpMenu);
+
+    utils.alturaPagina();
+
     startApp();
 
 })();
+
 function startApp() {
-    showResume();
-    
-    const dayClicked = document.querySelectorAll('[id^="day-"]').forEach(day => {
-        day.addEventListener('click', () => {
-            limparTela();
-            showDataDay(day.id)
-        })
-    })
+    utils.calcularHoras();
 }
 
-function limparTela() {
-    // Essa função limpa a tela ao ser chamada
-    document.getElementById('time-manager').innerHTML = '';
-}

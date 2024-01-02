@@ -55,14 +55,38 @@ img {
 header {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   height: 90px;
-  padding: 0.5rem;
+  padding: 0 1.5rem;
   background-color: #fff;
-  color: #333;
+  color: rgb(51, 51, 51);
   border-bottom: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+header img {
+  width: 40px;
+}
+header img:hover {
+  filter: brightness(1.6);
+  cursor: pointer;
+}
+
+#help-title {
+  color: #fff;
+  background-color: rgb(51, 51, 51);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5rem;
+}
+#help h3 {
+  text-transform: uppercase;
+  padding: 0.5rem;
+}
+#help p {
+  padding: 0 0.5rem;
+  text-align: justify;
   margin-bottom: 0.5rem;
 }
 
@@ -73,7 +97,7 @@ section {
 }
 section #total {
   color: #fff;
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   border-bottom: 1px solid #eee;
   padding: 0.5rem;
   text-align: center;
@@ -84,7 +108,7 @@ section .period {
   grid-template-columns: auto 1fr 1fr 1fr;
   gap: 0;
   color: #fff;
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   border-bottom: 1px solid #ccc;
   height: 25px;
 }
@@ -116,7 +140,7 @@ section .days > div:first-child {
 }
 section .days > div:first-child {
   color: #fff;
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   position: relative;
   display: block;
 }
@@ -141,18 +165,18 @@ section .total-day {
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
-  color: #333;
+  color: rgb(51, 51, 51);
   background-color: #eee;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgb(51, 51, 51);
   border-right: 1px solid #ccc;
   font-size: 1.3rem;
   font-weight: 500;
   text-align: center;
 }
 section .total-day::before {
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   content: "";
-  width: 24px;
+  width: 24.5px;
   height: 21px;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -170,7 +194,7 @@ footer {
   align-items: center;
   justify-content: center;
   height: 90px;
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   color: #fff;
   padding: 0.5rem;
   text-align: center;

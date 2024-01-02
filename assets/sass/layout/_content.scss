@@ -16,11 +16,6 @@
     }
 }
 
-@mixin cor-titulos {
-    color: $cor-branca;
-    background-color: $cor-cinza-escuro;
-}
-
 section {
     display: flex;
     flex-direction: column;
@@ -88,7 +83,7 @@ section {
         &::before {
             background-color: $cor-cinza-escuro;
             content: '';
-            width: 24px;
+            width: 24.5px;
             height: 21px;
             border-bottom: 1px solid $cor-cinza;
             border-right: 1px solid $cor-cinza;
