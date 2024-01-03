@@ -9,11 +9,8 @@ import { helpMenu } from './help.js';
 
     utils.alturaPagina();
 
-    startApp();
+    // startApp
+    utils.calcularHoras();
 
 })();
-
-function startApp() {
-    utils.calcularHoras();
-}
 

@@ -3,12 +3,25 @@
     background-color: $cor-cinza-escuro;
 }
 
+
 @mixin h3-info {
     text-transform: uppercase;
     padding: .5rem;
 }
 
+@mixin config-titulos {
+    @include cor-titulos();
+    @include h3-info();
+    text-align: center;
+}
+
+
 @mixin p-info {
     padding: 0 .5rem;
     text-align: justify;
+}
+
+.tempo-erro {
+    color: rgb(192, 9, 9) !important;
+    font-weight: bold;
 }

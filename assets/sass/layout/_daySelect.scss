@@ -1,0 +1,27 @@
+#data-day {
+    h2 {
+        @include config-titulos();
+    }
+
+    &-time{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 50px;
+        border-bottom: 1px solid $cor-cinza;
+        
+        input {
+            width: 65px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        
+        .time-input {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+    }
+}

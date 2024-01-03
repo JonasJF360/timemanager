@@ -1,4 +1,5 @@
 /* arquivo SCSS principal do projeto */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ body {
   font-size: 1.6rem;
   min-height: 100vh;
   background-color: #fff;
+  color: rgb(51, 51, 51);
 }
 
 a {
@@ -23,6 +25,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
 h1 {
@@ -52,18 +58,19 @@ img {
   min-height: 100vh;
 }
 
+.tempo-erro {
+  color: rgb(192, 9, 9) !important;
+  font-weight: bold;
+}
+
 header {
   display: flex;
-  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   height: 90px;
   padding: 0 1.5rem;
-  background-color: #fff;
-  color: rgb(51, 51, 51);
   border-bottom: 1px solid #ccc;
-  margin-bottom: 0.5rem;
 }
 header img {
   width: 40px;
@@ -76,9 +83,9 @@ header img:hover {
 #help-title {
   color: #fff;
   background-color: rgb(51, 51, 51);
-  text-align: center;
   text-transform: uppercase;
   padding: 0.5rem;
+  text-align: center;
 }
 #help h3 {
   text-transform: uppercase;
@@ -89,6 +96,10 @@ header img:hover {
   text-align: justify;
   margin-bottom: 0.5rem;
 }
+#help a:hover {
+  filter: brightness(0.3);
+  text-decoration: underline;
+}
 
 section {
   display: flex;
@@ -98,10 +109,10 @@ section {
 section #total {
   color: #fff;
   background-color: rgb(51, 51, 51);
-  border-bottom: 1px solid #eee;
+  text-transform: uppercase;
   padding: 0.5rem;
   text-align: center;
-  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
 }
 section .period {
   display: grid;
@@ -165,7 +176,6 @@ section .total-day {
   align-items: center;
   justify-content: space-between;
   text-transform: uppercase;
-  color: rgb(51, 51, 51);
   background-color: #eee;
   border-bottom: 1px solid rgb(51, 51, 51);
   border-right: 1px solid #ccc;
@@ -187,17 +197,42 @@ section .total-day p {
   border-top: 1px solid #ccc;
 }
 
+#data-day h2 {
+  color: #fff;
+  background-color: rgb(51, 51, 51);
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+}
+#data-day-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+#data-day-time input {
+  width: 65px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+#data-day-time .time-input {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 footer {
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90px;
   background-color: rgb(51, 51, 51);
   color: #fff;
-  padding: 0.5rem;
   text-align: center;
+  font-size: 1.2rem;
 }
 footer h2 {
   font-size: 2rem;

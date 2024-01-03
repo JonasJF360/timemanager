@@ -2,9 +2,9 @@ import { utils } from './utils.js';
 export function helpMenu() {
     const ajuda = document.querySelector('#menu-ajuda > img')
     
-    utils.cameBack();
-    showHelp();;
-
+    if(utils.cameBack()){
+        showHelp();
+    }
 }
 
 function showHelp() {
@@ -22,7 +22,7 @@ function showHelp() {
     divPrincipal.appendChild(h31);
 
     const p1 = document.createElement('p');
-    p1.innerHTML = 'Esse é um app para gerenciamento de tempo durante a semana. É para ser simples e fácil de usar. Por padrão, irá armazena os dados de forma local.<br>Você pode adicionar uma tarefa/atividade para cada dia em seu respectivo período, manhã, tarde ou noite, ou se preferir, apenas uma nota. Você também deve adicionar o tempo que irá se dedicar nessa atividade/tarefa para obter maior eficiência.';
+    p1.innerHTML = 'Esse é um app para gerenciamento de tempo durante a semana. É para ser simples e fácil de usar. Por padrão, irá armazenar os dados de forma local.<br>Você pode adicionar uma tarefa/atividade para cada dia em seu respectivo período, manhã, tarde ou noite, ou se preferir, apenas uma nota. Você também deve adicionar o tempo que irá se dedicar nessa atividade/tarefa para obter maior eficiência.';
     divPrincipal.appendChild(p1);
 
     const h32 = document.createElement('h3');

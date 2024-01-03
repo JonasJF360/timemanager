@@ -1,17 +1,20 @@
 #help {
     
     &-title {
-        @include cor-titulos();
-        text-align: center;
-        text-transform: uppercase;
-        padding: .5rem;
+        @include config-titulos();
     }
 
     h3 {
         @include h3-info();
     };
+
     p {
         @include p-info();
         margin-bottom: .5rem;
+    }
+
+    a:hover {
+        filter: brightness(.3);
+        text-decoration: underline;
     }
 }
