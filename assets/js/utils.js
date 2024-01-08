@@ -8,34 +8,34 @@ const utils = {
     },
 
     cameBack() {
-        const voltar = document.querySelector('#menu-ajuda > img')
+        const imagem = document.querySelector('#menu-ajuda > img')
 
         this.limparTela();
 
-        const estado = voltar.src.split('/').pop() === 'help.svg'
+        const estado = imagem.src.split('/').pop() === 'help.svg'
     
         if (estado) {
-            voltar.src = './assets/img/back.svg'
-            voltar.title = 'Voltar';
+            imagem.src = './assets/img/back.svg'
+            imagem.title = 'Voltar';
         } else {
-            voltar.src = './assets/img/help.svg';
-            voltar.title = 'Ajuda';
-            this.calcularHoras();
+            imagem.src = './assets/img/help.svg';
+            imagem.title = 'Ajuda';
+            this.calculateHours();
         }
 
         return estado
     },
 
-    alturaPagina(){
-        const corpo = document.querySelector('body');
+    mimPageHeight(){
         const altura = window.innerHeight;
+        const corpo = document.querySelector('body');
         const pagina = document.getElementById('app');
 
         corpo.style.minHeight = `${altura}px`;
         pagina.style.minHeight = `${altura}px`;
     },
 
-    calcularHoras() {
+    calculateHours() {
         data.startDataBase()
         showResume()
         

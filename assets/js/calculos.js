@@ -1,38 +1,38 @@
 // ## Funções para cálculos para períodos de tempo. ##
 const calc = {
-    somarPeriodosDeTempo(tempo01, tempo02) {
-        let intervalo = [
-            tempo01.split(':').map(num => parseInt(num)),
-            tempo02.split(':').map(num => parseInt(num))]
+    SumTimePeriods(time01, time02) {
+        const interval = [
+            time01.split(':').map(num => parseInt(num)),
+            time02.split(':').map(num => parseInt(num))]
     
-        let horas = intervalo[0][0] + intervalo[1][0]
-        let minutos = intervalo[0][1] + intervalo[1][1]
+        let hours = interval[0][0] + interval[1][0]
+        let minutes = interval[0][1] + interval[1][1]
     
-        while (minutos > 59) {
-            horas++
-            minutos -= 60
+        while (minutes > 59) {
+            hours++
+            minutes -= 60
         }
     
-        return horas.toString().padStart(2, '0') + ':' + minutos.toString().padStart(2, '0')
+        return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0')
     },
     
-    tempoEntreInicioEFim(horaInicio, horaFim) {
-        let inicio = horaInicio.split(':').map(num => parseInt(num))
-        let fim = horaFim.split(':').map(num => parseInt(num))
+    timeBetweenStartAndEnd(time01, time02) {
+        const startTime = time01.split(':').map(num => parseInt(num))
+        const endTime = time02.split(':').map(num => parseInt(num))
     
-        while (inicio[0] > fim[0]) {
-            inicio[0] > 0 ? inicio[0]-- : inicio[0] = 23
-            fim[0] > 0 ? fim[0]-- : fim[0] = 23
+        while (startTime[0] > endTime[0]) {
+            startTime[0] > 0 ? startTime[0]-- : startTime[0] = 23
+            endTime[0] > 0 ? endTime[0]-- : endTime[0] = 23
         }
     
-        let horas = fim[0] - inicio[0]
-        let minutos = fim[1] - inicio[1]
+        let hours = endTime[0] - startTime[0]
+        let minutes = endTime[1] - startTime[1]
     
-        if (minutos < 0) {
-            horas--
-            minutos += 60
+        if (minutes < 0) {
+            hours--
+            minutes += 60
         }
-        return horas.toString().padStart(2, '0') + ':' + minutos.toString().padStart(2, '0')
+        return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0')
     }
 }
 

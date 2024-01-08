@@ -58,9 +58,8 @@ section {
             background-color: $cor-cinza-claro;
         }
 
-        >div:nth-child(n+2):hover {
-            background-color: $cor-amarela-claro;
-            cursor: pointer;
+        >div:nth-child(n+2) {
+            @include hover-padrao();
         }
     }
 

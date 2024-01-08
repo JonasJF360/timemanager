@@ -21,18 +21,18 @@ function displayResume() {
 
         dayPeriod.forEach((period) => {
             const { hora } = dataBase[day][period];
-            const totalDay = calc.tempoEntreInicioEFim(hora[0], hora[1]);
+            const totalDay = calc.timeBetweenStartAndEnd(hora[0], hora[1]);
 
             const elementId = `#day-${day}-${period}`;
             document.querySelector(elementId).innerHTML = totalDay;
 
-            totalPeriod = calc.somarPeriodosDeTempo(totalPeriod, totalDay);
+            totalPeriod = calc.SumTimePeriods(totalPeriod, totalDay);
         });
 
         const totalDayElementId = `#total-day-${day}`;
         document.querySelector(totalDayElementId).innerHTML = totalPeriod;
 
-        totalHours = calc.somarPeriodosDeTempo(totalHours, totalPeriod);
+        totalHours = calc.SumTimePeriods(totalHours, totalPeriod);
     });
 
     document.querySelector('#total-hours').innerHTML = totalHours;

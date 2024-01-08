@@ -1,13 +1,12 @@
 import { utils } from './utils.js';
 export function helpMenu() {
-    const ajuda = document.querySelector('#menu-ajuda > img')
-    
+
     if(utils.cameBack()){
-        showHelp();
+        showHelpInfo();
     }
 }
 
-function showHelp() {
+function showHelpInfo() {
 
     const divPrincipal = document.createElement('div');
     divPrincipal.id = 'help';

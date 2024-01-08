@@ -3,6 +3,12 @@
     background-color: $cor-cinza-escuro;
 }
 
+@mixin hover-padrao {
+    &:hover {
+        cursor: pointer;
+        background-color: $cor-amarela-claro;
+    }
+}
 
 @mixin h3-info {
     text-transform: uppercase;

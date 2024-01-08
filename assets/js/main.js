@@ -7,10 +7,10 @@ import { helpMenu } from './help.js';
 
     document.querySelector('#menu-ajuda').addEventListener('click', helpMenu);
 
-    utils.alturaPagina();
+    utils.mimPageHeight();
 
     // startApp
-    utils.calcularHoras();
+    utils.calculateHours();
 
 })();
 
