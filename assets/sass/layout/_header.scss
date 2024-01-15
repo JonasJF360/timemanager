@@ -7,6 +7,10 @@ header {
     padding: 0 1.5rem;
     border-bottom: 1px solid $cor-cinza;
 
+    #principal {
+        cursor: pointer;
+    }
+
     img {
         width: 40px;
 

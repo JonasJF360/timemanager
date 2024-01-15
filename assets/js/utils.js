@@ -7,32 +7,16 @@ const utils = {
         document.getElementById('time-manager').innerHTML = '';
     },
 
-    cameBack() {
-        const imagem = document.querySelector('#menu-ajuda > img')
+    changeImage(img, title) {
+        const imagem = document.querySelector('#menu-acoes')
+        imagem.innerHTML = '';
 
-        this.limparTela();
+        const imgElement = document.createElement('img')
+        imgElement.src = `./assets/img/${img}.svg`;
+        imgElement.alt = title;
+        imgElement.title = title;
 
-        const estado = imagem.src.split('/').pop() === 'help.svg'
-    
-        if (estado) {
-            imagem.src = './assets/img/back.svg'
-            imagem.title = 'Voltar';
-        } else {
-            imagem.src = './assets/img/help.svg';
-            imagem.title = 'Ajuda';
-            this.calculateHours();
-        }
-
-        return estado
-    },
-
-    mimPageHeight(){
-        const altura = window.innerHeight;
-        const corpo = document.querySelector('body');
-        const pagina = document.getElementById('app');
-
-        corpo.style.minHeight = `${altura}px`;
-        pagina.style.minHeight = `${altura}px`;
+        imagem.appendChild(imgElement)
     },
 
     calculateHours() {

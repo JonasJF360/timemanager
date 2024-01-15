@@ -1,10 +1,61 @@
 import { utils } from './utils.js';
-export function helpMenu() {
+import { showDataDay } from './dataDay.js';
 
-    if(utils.cameBack()){
-        showHelpInfo();
+export const addEvent = {
+
+    backInitial() {
+        utils.changeImage('help', 'Ajuda');
+        document.querySelector('#principal').addEventListener('click', (e) => {
+            e.preventDefault();
+            backPrincipal()
+        });
+    },
+    help() {
+        utils.changeImage('help', 'Ajuda');
+        document.querySelector('#menu-acoes > img').addEventListener('click', (e) => {
+            e.preventDefault();
+            helpMenu()
+        });
+    },
+
+    principal() {
+        utils.changeImage('back', 'Voltar');
+        document.querySelector('#menu-acoes > img').addEventListener('click', (e) => {
+            e.preventDefault();
+            backPrincipal()
+        });
+    },
+
+    toDay(day, period) {
+        utils.changeImage('back', 'Voltar');
+        document.querySelector('#menu-acoes > img').addEventListener('click', (e) => {
+            e.preventDefault();
+            backToDay(day, period)
+        });
+    },
+
+    toDayAfterSave(day, period) {
+        backToDay(day, period)
     }
 }
+
+function backToDay(day, period) {
+    showDataDay(`day-${day}-${period}`);
+    addEvent.principal();
+}
+
+function backPrincipal() {
+    utils.limparTela();
+    utils.calculateHours()
+    addEvent.help();
+}
+
+function helpMenu() {
+    utils.limparTela();
+    showHelpInfo();
+    addEvent.principal();
+}
+
 
 function showHelpInfo() {
 

@@ -12,6 +12,8 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-size: 1.6rem;
   min-height: 100vh;
   background-color: #fff;
@@ -27,7 +29,12 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -43,7 +50,9 @@ h3 {
   font-size: 1.8rem;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   font-size: 1.6rem;
 }
 
@@ -52,10 +61,10 @@ img {
 }
 
 #app {
+  flex: 1;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  min-height: 100vh;
 }
 
 .tempo-erro {
@@ -71,6 +80,9 @@ header {
   height: 90px;
   padding: 0 1.5rem;
   border-bottom: 1px solid #ccc;
+}
+header #principal {
+  cursor: pointer;
 }
 header img {
   width: 40px;
@@ -104,7 +116,6 @@ header img:hover {
 section {
   display: flex;
   flex-direction: column;
-  min-height: 76.4vh;
 }
 section #total {
   color: #fff;
@@ -223,12 +234,12 @@ section .total-day p {
   text-align: center;
 }
 #data-day-note, #data-day-list {
-  min-height: 210px;
-  max-height: 210px;
   border: 1px solid #ccc;
   padding: 1rem;
   margin: 5px 0px;
   background-color: #eee;
+  min-height: 210px;
+  max-height: 210px;
 }
 #data-day-note p {
   text-align: justify;
@@ -284,17 +295,16 @@ section .total-day p {
 #data-day-list ul li {
   padding: 0.4rem 0.8rem;
   background-color: hsla(0, 0%, 0%, 0.1);
-  text-transform: capitalize;
   border: 1px solid #eee;
 }
 #data-day-list ul li:nth-child(odd) {
   background-color: hsla(0, 0%, 0%, 0.2);
 }
 #data-day-list ul li.checked {
-  color: #1998e2;
   text-decoration: line-through;
-  font-weight: 500;
+  color: #939393;
   font-style: italic;
+  font-weight: 500;
 }
 #data-day .list-show h3 {
   text-align: center;
@@ -315,12 +325,163 @@ section .total-day p {
   cursor: pointer;
 }
 
+#edit-note h2 {
+  color: #fff;
+  background-color: #333;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+}
+#edit-note h3 {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+#edit-note-text {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 5px 0px;
+  background-color: #eee;
+}
+#edit-note #conteudo {
+  width: 100%;
+  height: 250px;
+  padding: 0.5rem;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+#edit-note #aplicar {
+  display: block;
+  min-width: 150px;
+  margin: 0rem auto;
+  color: #fff;
+  background-color: #333;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+#edit-note #aplicar:hover {
+  filter: brightness(1.5);
+  cursor: pointer;
+}
+
+#edit-list h2 {
+  color: #fff;
+  background-color: #333;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+}
+#edit-list h3 {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+#edit-list #list-add {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  gap: 0.5rem;
+  padding: 0 2px 0.5rem 2px;
+}
+#edit-list #list-add textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.2rem;
+}
+#edit-list-content {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 5px 0px;
+  background-color: #eee;
+}
+#edit-list ul {
+  width: 100%;
+  height: 250px;
+  padding: 0.5rem;
+  resize: none;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: auto;
+  overscroll-behavior-y: contain;
+  user-select: none;
+}
+#edit-list ul li {
+  display: grid;
+  grid-template-columns: 15px 1fr 20px;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0 0.2rem;
+  background-color: #eee;
+  min-height: 30px;
+}
+#edit-list ul li:nth-child(odd) {
+  background-color: #ddd;
+}
+#edit-list ul li:hover {
+  filter: brightness(1.2);
+}
+#edit-list ul li label.label-completed {
+  text-decoration: line-through;
+  color: #939393;
+  font-style: italic;
+  font-weight: 500;
+}
+#edit-list ul li label.label-incomplete {
+  color: #333;
+}
+#edit-list ul li button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 9pt;
+  background-color: rgb(248, 100, 100);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: bolder;
+  border: none;
+}
+#edit-list ul li button:hover {
+  cursor: pointer;
+  filter: brightness(0.6);
+}
+#edit-list #aplicar {
+  display: block;
+  min-width: 150px;
+  margin: 0rem auto;
+  color: #fff;
+  background-color: #333;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+#edit-list #aplicar:hover {
+  filter: brightness(1.5);
+  cursor: pointer;
+}
+
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90px;
+  width: 100%;
+  max-width: 500px;
+  height: 70px;
+  margin: 0 auto;
   background-color: #333;
   color: #fff;
   text-align: center;

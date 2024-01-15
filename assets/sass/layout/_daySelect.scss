@@ -1,10 +1,7 @@
-@mixin config-limites {
+@mixin config-limites-local {
+    @include config-limites();
     min-height: 210px;
     max-height: 210px;
-    border: 1px solid $cor-cinza;
-    padding: 1rem;
-    margin: 5px 0px;
-    background-color: $cor-cinza-claro;
 }
 
 @mixin second-limites {
@@ -75,7 +72,7 @@
 
     &-note,
     &-list {
-        @include config-limites();
+        @include config-limites-local();
     }
 
     &-note p {
@@ -99,7 +96,6 @@
         li {
             padding: 0.4rem .8rem;
             background-color: $cor-preta-transparente-10;
-            text-transform: capitalize;
             border: 1px solid $cor-cinza-claro;
 
             &:nth-child(odd) {
@@ -107,10 +103,10 @@
             }
 
             &.checked {
-                color: $cor-azul;
                 text-decoration: line-through;
-                font-weight: 500;
+                color: $cor-cinza-medio-escuro;
                 font-style: italic;
+                font-weight: 500;
             }
         }
     }

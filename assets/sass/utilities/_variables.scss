@@ -31,3 +31,25 @@
     color: rgb(192, 9, 9) !important;
     font-weight: bold;
 }
+
+@mixin config-limites {
+    border: 1px solid $cor-cinza;
+    padding: 1rem;
+    margin: 5px 0px;
+    background-color: $cor-cinza-claro;
+}
+
+@mixin button-padrao {
+    display: block;
+    min-width: 150px;
+    margin: 0rem auto; 
+    @include config-titulos();
+    border: 1px solid $cor-cinza;
+    padding: .5rem 1rem;
+    font-weight: 600;
+
+    &:hover {
+        filter: brightness(1.5);
+        cursor: pointer;
+    }
+}

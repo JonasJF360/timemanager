@@ -1,10 +1,14 @@
-import { utils } from './utils.js';
+import { addEvent } from './eventButton.js';
 import { data } from './data.js';
 import { calc } from './calculos.js';
+import { utils } from './utils.js';
+import { editNote } from './editNote.js';
+import { editList } from './editList.js';
 
 export function showDataDay(dayId) {
     const [_, day, period] = dayId.split('-');
-    utils.cameBack();
+    utils.limparTela();
+    addEvent.principal();
 
     buildTimeManipulator(day, period)
 
@@ -38,7 +42,7 @@ function buildDataDay(day, period) {
 
         divNote.querySelector('p').addEventListener('click', (e) => {
             e.preventDefault()
-            alert(`Anotação ${day} - ${period} selecionada!`)
+            editNote(day, period)
         })
     } else {
         divNote.classList.add('note-empty')
@@ -46,7 +50,7 @@ function buildDataDay(day, period) {
 
         divNote.querySelector('img').addEventListener('click', (e) => {
             e.preventDefault()
-            alert('Uma nota será adicionada!')
+           editNote(day, period)
         })
     }
 
@@ -56,7 +60,7 @@ function buildDataDay(day, period) {
 
         divList.querySelector('ul').addEventListener('click', (e) => {
             e.preventDefault()
-            alert(`Tarefa ${day} - ${period} selecionada!`)
+            editList(day, period)
         })
     } else {
         divList.classList.add('list-empty')
@@ -64,7 +68,7 @@ function buildDataDay(day, period) {
 
         divList.querySelector('img').addEventListener('click', (e) => {
             e.preventDefault()
-            alert('Clicou para adicionar uma lista!')
+            editList(day, period)
         })
     }
 
