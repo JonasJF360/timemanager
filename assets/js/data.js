@@ -11,15 +11,11 @@ const data = {
     createDataBaseJson() {
         const BaseDados = {}
 
-        // Teste: Apagar depois
-        const lista = [["nota 01", true], ["nota 02", false], ["nota 03", false], ["nota 04", true], ["nota 05", false], ["nota 06", false], ["nota 07", true], ["nota 08", true]]
-        // Fim do teste
-
         for (let i = 1; i <= 7; i++) {
             BaseDados[i] = {
-                1: { 'nota': '', 'lista': [...lista], 'hora': ['08:30', '10:15'] },
-                2: { 'nota': '', 'lista': [...lista], 'hora': ['12:30', '13:40'] },
-                3: { 'nota': '', 'lista': [],         'hora': ['19:00', '22:27'] }
+                1: { 'nota': '', 'lista': [], 'hora': ['00:00', '00:00'] },
+                2: { 'nota': '', 'lista': [], 'hora': ['00:00', '00:00'] },
+                3: { 'nota': '', 'lista': [], 'hora': ['00:00', '00:00'] }
             }
         }
 
@@ -55,23 +51,58 @@ const data = {
         return calc.timeBetweenStartAndEnd(this.getInitialTime(day, period), this.getFinalTime(day, period))
     },
 
+    setInitialTime(day, period, time) {
+        const dataBase = this.getDataBaseJson()
+        dataBase[day][period].hora[0] = time
+        save(dataBase)
+    },
+
+    setFinalTime(day, period, time) {
+        const dataBase = this.getDataBaseJson()
+        dataBase[day][period].hora[1] = time
+        save(dataBase)
+    },
+
     setNote(day, period, note) {
         const dataBase = this.getDataBaseJson()
         dataBase[day][period].nota = note
-        localStorage.clear('dataBaseTimeManager')
-        localStorage.setItem('dataBaseTimeManager', JSON.stringify(dataBase))   
+        save(dataBase)
     },
 
     setList(day, period, newToDo) {
         const dataBase = this.getDataBaseJson()
         if (dataBase[day][period].lista.length >= 50) {
-            return            
+            alert('Limite de tarefas atingido!')
+            return
         }
         dataBase[day][period].lista.push([newToDo, false])
-        localStorage.clear('dataBaseTimeManager')
-        localStorage.setItem('dataBaseTimeManager', JSON.stringify(dataBase))   
+        dataBase[day][period].lista = dataBase[day][period].lista.sort(compararSublistas)
+        save(dataBase)
+    },
+
+    updateStatusList(day, period, index) {
+        const dataBase = this.getDataBaseJson()
+        dataBase[day][period].lista[index][1] = !dataBase[day][period].lista[index][1]
+        dataBase[day][period].lista = dataBase[day][period].lista.sort(compararSublistas)
+        save(dataBase)
+    },
+
+    deleteItemList(day, period, index) {
+        const dataBase = this.getDataBaseJson()
+        dataBase[day][period].lista.splice(index, 1)
+        save(dataBase)
     }
 
+}
+
+function save(data) {
+    localStorage.clear('dataBaseTimeManager')
+    localStorage.setItem('dataBaseTimeManager', JSON.stringify(data))
+}
+
+function compararSublistas(sublistaA, sublistaB) {
+    // Coloca as sub-listas com 'false' antes das sub-listas com 'true'
+    return sublistaA[1] - sublistaB[1];
 }
 
 export { data }

@@ -1,7 +1,117 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460 460" xml:space="preserve" width="251px" height="251px" fill="#000000">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <g> <path style="fill:#FFD170;" d="M154.2,447.199l293-293C415.869,64.419,330.464,0,230,0C102.975,0,0,102.974,0,230 C0,330.464,64.42,415.869,154.2,447.199z"/> <path style="fill:#FF984C;" d="M460,230c0-26.562-4.517-52.064-12.801-75.801L353,60L107,400l47.199,47.199 C177.936,455.483,203.439,460,230,460C357.026,460,460,357.025,460,230z"/> <polygon style="fill:#FFF0CF;" points="255,360 255,390 127,390 127,360 191,350 "/> <polygon style="fill:#FFFFFF;" points="245,340 255,360 127,360 127,330 "/> <polygon style="fill:#405A0F;" points="137,340 121.667,330 107,340 107,400 245,400 245,380 137,380 "/> <polygon style="fill:#2A3C0A;" points="137,340 107,340 107,60 137,60 147,200 "/> <polygon style="fill:#557714;" points="245,340 137,340 137,60 245,60 255,200 "/> <polygon style="fill:#FFE1A0;" points="353,360 353,390 245,390 245,360 299,350 "/> <rect x="245" y="330" style="fill:#FFF0CF;" width="108" height="30"/> <rect x="245" y="60" style="fill:#2A3C0A;" width="108" height="280"/> <polygon style="fill:#2A3C0A;" points="353,380 353,400 245,400 245,380 297.667,380 "/> <polygon style="fill:#2A3C0A;" points="27,230 60.334,217.5 70.513,230 60.334,242.5 "/> <polygon style="fill:#FFFFFF;" points="107,200 60.334,217.5 60.334,242.5 107,260 127.654,230 "/> <polygon style="fill:#FFD170;" points="371.992,230 220.996,238.571 107,230 107,200 353,200 "/> <polygon style="fill:#FFC240;" points="353,260 107,260 107,230 371.992,230 "/> <polygon style="fill:#FFE1A0;" points="373,200 353,200 353,260 373,260 383,230 "/> <path style="fill:#AA1106;" d="M424.64,230v10c0,11-9,20-20,20H373v-30l25.82-10L424.64,230z"/> <path style="fill:#FF1909;" d="M424.64,220v10H373v-30h31.64C415.64,200,424.64,209,424.64,220z"/> </g> </g>
-</svg>
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   viewBox="0 0 460 460"
+   xml:space="preserve"
+   width="251px"
+   height="251px"
+   fill="#000000"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs46">                     </defs><sodipodi:namedview
+   id="namedview44"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="1.3466018"
+   inkscape:cx="86.885375"
+   inkscape:cy="197.90558"
+   inkscape:window-width="1366"
+   inkscape:window-height="731"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+
+<g
+   id="SVGRepo_bgCarrier"
+   stroke-width="0" />
+
+<g
+   id="SVGRepo_tracerCarrier"
+   stroke-linecap="round"
+   stroke-linejoin="round" />
+
+<circle
+   style="fill:#ffffdd;fill-opacity:1;stroke:#666666;stroke-width:3.66533865;stroke-linecap:round;paint-order:stroke markers fill;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round"
+   id="path1136"
+   cx="230"
+   cy="230"
+   r="225.41832" /><polygon
+   style="fill:#4d4d4d"
+   points="245,380 137,380 137,340 121.667,330 107,340 107,400 245,400 "
+   id="polygon12"
+   transform="matrix(1.0453354,0,0,1,-4.8508918,0)" /><polygon
+   style="fill:#1a1a1a"
+   points="147,200 137,340 107,340 107,60 137,60 "
+   id="polygon14" /><polygon
+   style="fill:#808080"
+   points="255,200 245,340 137,340 137,60 245,60 "
+   id="polygon16" /><polygon
+   style="fill:#ffe1a0"
+   points="353,360 353,390 245,390 245,360 299,350 "
+   id="polygon18"
+   transform="matrix(1,0,0,0.75,0,87.5)" /><rect
+   x="137"
+   y="360"
+   style="fill:#fff0cf;stroke-width:0.816497"
+   width="108"
+   height="20"
+   id="rect20" /><rect
+   x="245"
+   y="60"
+   style="fill:#4d4d4d"
+   width="108"
+   height="280"
+   id="rect22" /><polygon
+   style="fill:#333333"
+   points="297.667,380 353,380 353,400 245,400 245,380 "
+   id="polygon24" /><g
+   id="g846"
+   transform="matrix(1.0423731,-0.37713187,0.42482393,1.1741915,-103.61284,45.099879)"><polygon
+     style="fill:#164450"
+     points="60.334,242.5 27,230 60.334,217.5 70.513,230 "
+     id="polygon26" /><polygon
+     style="fill:#e9c6af"
+     points="60.334,242.5 107,260 127.654,230 107,200 60.334,217.5 "
+     id="polygon28" /><polygon
+     style="fill:#87cdde"
+     points="107,230 107,200 353,200 371.992,230 220.996,238.571 "
+     id="polygon30" /><polygon
+     style="fill:#5fbcd3"
+     points="371.992,230 353,260 107,260 107,230 "
+     id="polygon32" /><polygon
+     style="fill:#2c89a0"
+     points="353,260 373,260 383,230 373,200 353,200 "
+     id="polygon34" /><path
+     style="fill:#c83737"
+     d="m 424.64,230 v 10 c 0,11 -9,20 -20,20 H 373 v -30 l 25.82,-10 z"
+     id="path36" /><path
+     style="fill:#ff5555"
+     d="m 424.64,220 v 10 H 373 v -30 h 31.64 c 11,0 20,9 20,20 z"
+     id="path38" /></g>
+
+<rect
+   style="fill:#ffffff;stroke:none;stroke-width:3.66534;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+   id="rect1664"
+   width="108"
+   height="19.999998"
+   x="137"
+   y="340" /><rect
+   x="245"
+   y="340"
+   style="fill:#fff0cf;stroke-width:0.816497"
+   width="108"
+   height="20"
+   id="rect1908" /></svg>

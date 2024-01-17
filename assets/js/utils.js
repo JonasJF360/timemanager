@@ -24,7 +24,8 @@ const utils = {
         showResume()
         
         document.querySelectorAll('[id^="day-"]').forEach(day => {
-            day.addEventListener('click', () => {
+            day.addEventListener('click', (e) => {
+                e.preventDefault();
                 showDataDay(day.id)
             })
         })

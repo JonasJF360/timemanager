@@ -17,6 +17,24 @@ export function editList(day, period) {
             salvarTarefa(day, period);
         }
     });
+    
+    document.querySelectorAll('[id^="list-item-"]').forEach(check => {
+        check.addEventListener('click', (e) => {
+            e.preventDefault();
+            const index = Number.parseInt(check.id.split('-').pop())
+            data.updateStatusList(day, period, index);
+            editList(day, period)
+        });
+    });
+
+    document.querySelectorAll('[id^="delete-list-"]').forEach(delet => {
+        delet.addEventListener('click', (e) => {
+            e.preventDefault();
+            const index = Number.parseInt(delet.id.split('-').pop())
+            data.deleteItemList(day, period, index);
+            editList(day, period)
+        });
+    });
 }
 
 function salvarTarefa(day, period) {
@@ -72,10 +90,10 @@ function buildEditList(day, period) {
 
     if (dados) {
         ul.innerHTML = `
-            ${dados.map((item, index) => `<li id='list-item-${index}'>
-                    <input type="checkbox" ${item[1] ? 'checked' : ''}>
+            ${dados.map((item, index) => `<li>
+                    <input id='list-item-${index}' type="checkbox" ${item[1] ? 'checked' : ''}>
                     <label class='label-${item[1] ? 'completed' : 'incomplete'}' >${item[0]}</label>
-                    <button class='delete' id='delete-${index}' title='Excluir'>-</button>
+                    <button class='delete' id='delete-list-${index}' title='Excluir'>-</button>
             </li>`).join('')}
             `
     }

@@ -1,5 +1,6 @@
 import { utils } from './utils.js';
 import { showDataDay } from './dataDay.js';
+import { data } from './data.js';
 
 export const addEvent = {
 
@@ -26,6 +27,24 @@ export const addEvent = {
         });
     },
 
+    dayToPrincipal(day, period) {
+        utils.changeImage('back', 'Voltar');
+        document.querySelector('#menu-acoes > img').addEventListener('click', (e) => {
+            e.preventDefault();
+            const note = data.getNote(day, period)
+             const list = data.getList(day, period)
+            let initialTime = '00:00'
+            let finallTime = '00:00'
+            if(note || list.length > 0) {
+                initialTime = document.querySelector('#tempo-inicio').value
+                finallTime = document.querySelector('#tempo-final').value
+            }
+            data.setInitialTime(day, period, initialTime)
+            data.setFinalTime(day, period, finallTime)
+            backPrincipal()
+        });
+    },
+
     toDay(day, period) {
         utils.changeImage('back', 'Voltar');
         document.querySelector('#menu-acoes > img').addEventListener('click', (e) => {
@@ -41,7 +60,7 @@ export const addEvent = {
 
 function backToDay(day, period) {
     showDataDay(`day-${day}-${period}`);
-    addEvent.principal();
+    addEvent.dayToPrincipal(day, period);
 }
 
 function backPrincipal() {

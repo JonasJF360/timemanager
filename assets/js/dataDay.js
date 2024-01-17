@@ -8,7 +8,7 @@ import { editList } from './editList.js';
 export function showDataDay(dayId) {
     const [_, day, period] = dayId.split('-');
     utils.limparTela();
-    addEvent.principal();
+    addEvent.dayToPrincipal(day, period)
 
     buildTimeManipulator(day, period)
 
