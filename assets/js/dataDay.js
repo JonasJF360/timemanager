@@ -50,7 +50,7 @@ function buildDataDay(day, period) {
 
         divNote.querySelector('img').addEventListener('click', (e) => {
             e.preventDefault()
-           editNote(day, period)
+            editNote(day, period)
         })
     }
 
@@ -77,11 +77,15 @@ function buildDataDay(day, period) {
 }
 
 function showNote(elementNote, note) {
-    elementNote.innerHTML = `<h3>Anotações</h3><p id='data-day-note-text'>${note}</p>`   
+    elementNote.innerHTML = `<h3>Anotações</h3><p id='data-day-note-text'>${note}</p>`
 }
 
 function showList(elementList, list) {
-    elementList.innerHTML = `<h3>Lista de Tarefas</h3><ul>${list.map((item, index) => `<li class='${item[1] ? 'checked' : 'active'}'>${(index + 1).toString().padStart(2, '0')}. ${item[0]}</li>`).join('')}</ul>`    
+    elementList.innerHTML = `<h3>Lista de Tarefas</h3><ul>${list.map((item, index) => `<li class='${item[1] ? 'checked' : 'active'}'>${(index + 1).toString().padStart(2, '0')}. ${utils.breakBigWords(
+        item[0].replaceAll('&lt;', '<')
+            .replaceAll('&gt;', '>')
+            .replaceAll('&amp;', '&'))
+        }</li>`).join('')}</ul>`
 }
 
 function addImage(e, name) {

@@ -19,10 +19,35 @@ const utils = {
         imagem.appendChild(imgElement)
     },
 
+    breakBigWords(texto) {
+        let palavras = texto.split(' ');
+
+        function reduzir(palavra, tamanho) {
+            const partes = [];
+            for (let i = 0; i < palavra.length; i += tamanho) {
+                partes.push(palavra.substr(i, tamanho));
+            }
+            return partes.join('<wbr>');
+        }
+
+        palavras = palavras.map((palavra) => {
+            if (palavra.length >= 20) {
+                palavra = reduzir(palavra, 7);
+            } else if (palavra.length >= 15) {
+                palavra = reduzir(palavra, 6);
+            } else if (palavra.length >= 10) {
+                palavra = reduzir(palavra, 5);
+            }
+            return palavra;
+        });
+
+        return palavras.join(' ');
+    },
+
     calculateHours() {
         data.startDataBase()
         showResume()
-        
+
         document.querySelectorAll('[id^="day-"]').forEach(day => {
             day.addEventListener('click', (e) => {
                 e.preventDefault();

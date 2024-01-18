@@ -17,7 +17,7 @@ export function editList(day, period) {
             salvarTarefa(day, period);
         }
     });
-    
+
     document.querySelectorAll('[id^="list-item-"]').forEach(check => {
         check.addEventListener('click', (e) => {
             e.preventDefault();
@@ -38,8 +38,12 @@ export function editList(day, period) {
 }
 
 function salvarTarefa(day, period) {
-    const tarefa = document.querySelector('#list-add > textarea').value.trim()
+    let tarefa = document.querySelector('#list-add > textarea').value.trim()
     if (tarefa) {
+        tarefa = tarefa
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('&', '&amp;')
         data.setList(day, period, tarefa)
         editList(day, period)
     }
@@ -72,7 +76,7 @@ function buildEditList(day, period) {
     textarea.cols = '55'
     textarea.rows = '1'
     textarea.minLength = '0'
-    textarea.maxLength = '45'
+    textarea.maxLength = '100'
     textarea.placeholder = 'Adicionar tarefa...'
     divAdd.appendChild(textarea)
 
@@ -92,7 +96,10 @@ function buildEditList(day, period) {
         ul.innerHTML = `
             ${dados.map((item, index) => `<li>
                     <input id='list-item-${index}' type="checkbox" ${item[1] ? 'checked' : ''}>
-                    <label class='label-${item[1] ? 'completed' : 'incomplete'}' >${item[0]}</label>
+                    <label class='label-${item[1] ? 'completed' : 'incomplete'}' >${utils.breakBigWords(item[0].replaceAll('&lt;', '<')
+            .replaceAll('&gt;', '>')
+            .replaceAll('&amp;', '&'))
+            }</label>
                     <button class='delete' id='delete-list-${index}' title='Excluir'>-</button>
             </li>`).join('')}
             `

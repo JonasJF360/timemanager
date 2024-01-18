@@ -483,6 +483,10 @@ section .total-day p {
   filter: brightness(1.2);
 }
 
+#edit-list ul li label {
+  padding: 0.5rem 0;
+}
+
 #edit-list ul li label.label-completed {
   text-decoration: line-through;
   color: #939393;
